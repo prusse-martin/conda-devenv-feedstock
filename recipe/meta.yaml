@@ -1,15 +1,13 @@
 {% set name = "conda-devenv" %}
 {% set version = "0.9.2" %}
-{% set hash = "493017fc98fadd3a6b4f0a286423fc4c8b2c7ae69b2d3dd454b7d078917b6606" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: '{{ name }}-{{ version }}.tar.gz'
-  url: https://github.com/ESSS/conda-devenv/archive/{{ version }}.tar.gz
-  sha256: {{ hash }}
+  git_url: https://github.com/ESSS/conda-devenv.git
+  git_rev: {{ version }}
 
 build:
   number: 0
