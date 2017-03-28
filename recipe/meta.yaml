@@ -1,15 +1,13 @@
 {% set name = "conda-devenv" %}
-{% set version = "0.9.1" %}
-{% set hash = "fe8e9be7d4f2df03b9a269a4b4b36ca67477c9b1d5c2af1af440f63b787f2f05" %}
+{% set version = "0.9.2" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: '{{ name }}-{{ version }}.tar.gz'
-  url: https://github.com/ESSS/conda-devenv/archive/{{ version }}.tar.gz
-  sha256: {{ hash }}
+  git_url: https://github.com/ESSS/conda-devenv.git
+  git_rev: {{ version }}
 
 build:
   number: 0
@@ -21,6 +19,7 @@ requirements:
   build:
     - python
     - setuptools
+    - setuptools_scm
   run:
     - python
     - jinja2
