@@ -14,9 +14,7 @@ Summary: A tool to work with multiple projects in develop-mode using conda-env.
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/conda-devenv-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/conda-devenv-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/conda-devenv-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/conda-devenv-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/conda-devenv-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/conda-devenv-feedstock/branch/master)
+All platforms: [![Circle CI](https://circleci.com/gh/conda-forge/conda-devenv-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/conda-devenv-feedstock)
 
 Current release info
 ====================
