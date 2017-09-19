@@ -1,12 +1,12 @@
 {% set name = "conda-devenv" %}
-{% set version = "0.9.6" %}
+{% set version = "1.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  git_url: https://github.com/ESSS/conda-devenv.git
+  git_url: https://github.com/ESSS/{{ name }}.git
   git_rev: {{ version }}
 
 build:
@@ -14,6 +14,7 @@ build:
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - conda-devenv = conda_devenv.devenv:main
+  noarch: python
 
 requirements:
   build:
@@ -24,12 +25,20 @@ requirements:
     - python
     - jinja2
     - pyyaml
+    - six
 
 test:
+  requires:
+    - pytest >=3
+    - pytest-datadir >=1.0
+    - pytest-mock
   imports:
     - conda_devenv
   commands:
     - conda-devenv --help
+    - pytest tests
+  source_files:
+    - tests
 
 about:
   home: https://github.com/ESSS/conda-devenv
