@@ -10,11 +10,11 @@ source:
   git_rev: {{ version }}
 
 build:
-  number: 0
+  number: 1
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - conda-devenv = conda_devenv.devenv:main
-  noarch: python
+  noarch_python: True
 
 requirements:
   build:
