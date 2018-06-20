@@ -1,16 +1,15 @@
 {% set name = "conda-devenv" %}
-{% set version = "1.0.2" %}
+{% set version = "1.0.3" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  git_url: https://github.com/ESSS/{{ name }}.git
-  git_rev: {{ version }}
+  url: https://github.com/ESSS/{{ name }}/archive/{{version }}.tar.gz
 
 build:
-  number: 1
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
   entry_points:
     - conda-devenv = conda_devenv.devenv:main
