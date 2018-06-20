@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/ESSS/{{ name }}/archive/{{version }}.tar.gz
-  sha256: 1e2836d4c98baceb9959d91bf5e2c422f5d3521372e99abc63a3d56106a05d93
+  git_url: https://github.com/ESSS/{{ name }}.git
+  git_rev: {{ version }}
 
 build:
   number: 0
