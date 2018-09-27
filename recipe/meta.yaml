@@ -1,17 +1,19 @@
 {% set name = "conda-devenv" %}
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  git_url: https://github.com/ESSS/{{ name }}.git
-  git_rev: {{ version }}
+  url: https://github.com/ESSS/conda-devenv/archive/{{ version }}.tar.gz
+  sha256: a0a88f7d482ec6293aee52a3026055e32a8719ec828f0496fc9b5c084c7ab33f
 
 build:
-  number: 1
-  script: python -m pip install . --no-deps --ignore-installed
+  number: 0
+  script:
+    - export SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
+    - python -m pip install . --no-deps --ignore-installed
   entry_points:
     - conda-devenv = conda_devenv.devenv:main
   noarch: python
@@ -36,6 +38,7 @@ test:
   imports:
     - conda_devenv
   commands:
+    - conda-devenv --version
     - conda-devenv --help
     - pytest tests
   source_files:
